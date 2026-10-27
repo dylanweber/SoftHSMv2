@@ -165,10 +165,10 @@ if(WIN32)
 	list(APPEND INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/../win32)
 ENDIF()
 
-if(WITH_BOTAN)
+if(WITH_BOTAN AND CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	# mute botan specific warnings
 	# https://github.com/randombit/botan/issues/486
-	list(APPEND COMPILE_OPTIONS "/wd4250;/wd4251;/wd4275;/wd4127;/wd4273") 
+	list(APPEND COMPILE_OPTIONS "/wd4250;/wd4251;/wd4275;/wd4127;/wd4273")
 endif()
 
 include_directories(${INCLUDE_DIRS})
