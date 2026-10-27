@@ -161,7 +161,7 @@ if(WITH_BOTAN)
                         )
 endif(WITH_BOTAN)
 
-if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+if(WIN32)
 	list(APPEND INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/../win32)
 ENDIF()
 
